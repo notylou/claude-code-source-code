@@ -1,15 +1,15 @@
 <div align="center">
 
-# Claude Code — Leaked Source
+# Claude Code Source Snapshot
 
-**The full source code of Anthropic's Claude Code CLI, leaked on March 31, 2026**
+**An exploratory mirror of a source snapshot reportedly exposed via published source maps on March 31, 2026**
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-512K%2B_lines-3178C6?logo=typescript&logoColor=white)](#tech-stack)
 [![Bun](https://img.shields.io/badge/Runtime-Bun-f472b6?logo=bun&logoColor=white)](#tech-stack)
 [![Files](https://img.shields.io/badge/~1,900_files-source_only-grey)](#directory-structure)
 [![MCP Server](https://img.shields.io/badge/MCP-Explorer_Server-blueviolet)](#-explore-with-mcp-server)
 
-> The original unmodified leaked source is preserved in this repository's [`backup` branch](https://github.com/777genius/claude-code-source-code/tree/backup).
+> The raw imported snapshot is preserved in this repository's [`backup` branch](https://github.com/777genius/claude-code-source-code/tree/backup). The `main` branch contains added documentation, tooling, and repository metadata.
 
 </div>
 
@@ -54,7 +54,7 @@ Also check out these two cool projects:
 
 ## What Is Claude Code?
 
-Claude Code is Anthropic's official CLI tool for interacting with Claude directly from the terminal — editing files, running commands, searching codebases, managing git workflows, and more. This repository contains the leaked `src/` directory.
+Claude Code is Anthropic's official CLI tool for interacting with Claude directly from the terminal: editing files, running commands, searching codebases, managing git workflows, and more. This repository contains a source snapshot together with added docs, MCP tooling, and repository metadata to help inspect it.
 
 | | |
 |---|---|
@@ -66,7 +66,7 @@ Claude Code is Anthropic's official CLI tool for interacting with Claude directl
 
 ---
 
-## � Documentation
+## Documentation
 
 For in-depth guides, see the [`docs/`](docs/) directory:
 
@@ -82,9 +82,9 @@ Also see: [CONTRIBUTING.md](CONTRIBUTING.md) · [MCP Server README](mcp-server/R
 
 ---
 
-## �🔍 Explore with MCP Server
+## Explore with MCP Server
 
-This repo ships an [MCP server](https://modelcontextprotocol.io/) that lets any MCP-compatible client (Claude Code, Claude Desktop, VS Code Copilot, Cursor) explore the full source interactively.
+This repo also ships an [MCP server](https://modelcontextprotocol.io/) that lets any MCP-compatible client (Claude Code, Claude Desktop, VS Code Copilot, Cursor) explore the snapshot interactively.
 
 ### Install from npm
 
@@ -101,7 +101,7 @@ claude mcp add claude-code-explorer -- npx -y claude-code-explorer-mcp
 git clone https://github.com/777genius/claude-code-source-code.git ~/claude-code-source-code \
   && cd ~/claude-code-source-code/mcp-server \
   && npm install && npm run build \
-  && claude mcp add claude-code-explorer -- node ~/claude-code/mcp-server/dist/index.js
+  && claude mcp add claude-code-explorer -- node ~/claude-code-source-code/mcp-server/dist/index.js
 ```
 
 <details>
@@ -116,7 +116,7 @@ cd claude-code-source-code/mcp-server
 npm install && npm run build
 
 # 3. Register with Claude Code
-claude mcp add claude-code-explorer -- node /absolute/path/to/claude-code/mcp-server/dist/index.js
+claude mcp add claude-code-explorer -- node /absolute/path/to/claude-code-source-code/mcp-server/dist/index.js
 ```
 
 Replace `/absolute/path/to/claude-code-source-code` with your actual clone path.
@@ -146,8 +146,8 @@ Replace `/absolute/path/to/claude-code-source-code` with your actual clone path.
   "mcpServers": {
     "claude-code-explorer": {
       "command": "node",
-      "args": ["/absolute/path/to/claude-code/mcp-server/dist/index.js"],
-      "env": { "CLAUDE_CODE_SRC_ROOT": "/absolute/path/to/claude-code/src" }
+      "args": ["/absolute/path/to/claude-code-source-code/mcp-server/dist/index.js"],
+      "env": { "CLAUDE_CODE_SRC_ROOT": "/absolute/path/to/claude-code-source-code/src" }
     }
   }
 }
@@ -436,13 +436,12 @@ git push origin main
 
 ## Contributing
 
-Contributions to documentation, the MCP server, and exploration tooling are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions to documentation, the MCP server, and exploration tooling are welcome. Changes to the archived snapshot under `src/` are not the default contribution path. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-> **Note:** The `src/` directory is the original leaked source and should not be modified.
+> **Note:** The `src/` directory is the archived source snapshot and should generally remain unchanged.
 
 ---
 
 ## Disclaimer
 
-This repository archives source code leaked from Anthropic's npm registry on **2026-03-31**. All original source code is the property of [Anthropic](https://www.anthropic.com). This is not an official release and is not licensed for redistribution. Contact [nichxbt](https://www.x.com/nichxbt) for any comments.
-
+This repository archives a source snapshot reportedly exposed via Anthropic's npm distribution on **2026-03-31**. It is provided for research, documentation, and exploratory tooling around the snapshot. The original Claude Code source remains the property of [Anthropic](https://www.anthropic.com), this is not an official release, and no rights to Anthropic's original code are granted by this repository. If you choose to use or redistribute any of the archived material, you are responsible for assessing the legal implications yourself. Contact [nichxbt](https://www.x.com/nichxbt) for any comments.

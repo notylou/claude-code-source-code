@@ -4,7 +4,7 @@ Thanks for your interest in contributing to this repository!
 
 ## What This Is
 
-This repo archives the **leaked source code** of Anthropic's Claude Code CLI. Contributions here are about **documentation, tooling, and exploration aids** — not modifying the original Claude Code source.
+This repo archives a source snapshot of Anthropic's Claude Code CLI together with documentation and exploration tooling. Contributions here are about **documentation, tooling, and exploration aids** rather than editing the archived snapshot itself.
 
 ## What You Can Contribute
 
@@ -16,8 +16,8 @@ This repo archives the **leaked source code** of Anthropic's Claude Code CLI. Co
 
 ## What Not to Change
 
-- **`src/` directory** — This is the original leaked source, preserved as-is. Don't modify it.
-- The [`backup` branch](https://github.com/777genius/claude-code-source-code/tree/backup) contains the unmodified original.
+- **`src/` directory** — This is the archived source snapshot and should generally remain unchanged.
+- The [`backup` branch](https://github.com/777genius/claude-code-source-code/tree/backup) contains the raw imported snapshot.
 
 ## Getting Started
 
@@ -45,7 +45,7 @@ npm run build  # Compile to dist/
 ### Linting & Type Checking
 
 ```bash
-# From the repo root — checks the leaked src/
+# From the repo root — checks the archived snapshot
 npm run lint        # Biome lint
 npm run typecheck   # TypeScript type check
 ```
@@ -66,6 +66,8 @@ For any new code (MCP server, tooling, scripts):
 3. Make your changes
 4. Commit with a clear message
 5. Push and open a pull request
+
+Please keep pull requests scoped to docs, MCP tooling, scripts, or repository metadata unless a maintainer explicitly asks for changes to the archived snapshot.
 
 ## Questions?
 
